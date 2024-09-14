@@ -36,6 +36,7 @@ matplotlib.rcParams['ytick.major.size'] = 3
 
 # %%
 # add_equal_axes
+# This function is modified from https://bbs.06climate.com/forum.php?mod=viewthread&tid=101847
 import matplotlib.transforms as mtransforms
 def add_equal_axes(ax, loc, pad=None, h_pad=None, v_pad=None, h_width=None, h_height=None, v_width=None, v_height=None,
                    ha='left', va='lower'):
@@ -1009,8 +1010,8 @@ auto_label(ax0, ax1, ax2, ax3, ax4, ax5, ax6)
 # Seasonal RMSE
 
 # %%
+# Found the solution at https://stackoverflow.com/questions/56838187/how-to-create-spacing-between-same-subgroup-in-seaborn-boxplot
 from matplotlib.patches import PathPatch
-
 def adjust_box_widths(g, fac):
     """
     Adjust the withs of a seaborn-generated boxplot.
@@ -1282,7 +1283,7 @@ auto_label(ax1, ax2, ax3, ax4)
 # %%
 fig, axes = plt.subplots(2, 3, figsize=(18/2.54, 11/2.54), sharey=True, sharex=True)
 
-plt.subplots_adjust(wspace=0.25, hspace=0.4)  # put this before create cbax!
+plt.subplots_adjust(wspace=0.25, hspace=0.4)  # put this before creating cbax
 
 axes.flatten()[-1].axis('off')
 
@@ -1313,8 +1314,6 @@ axes[1,1].set_title('UKESM1-0-LL', fontsize=7)
 
 auto_label(axes.flatten()[:-1])
 
-# %% [markdown]
-# ### SF15
 
 # %%
 fig, ax = plt.subplots(figsize=(12/2.54, 9/2.54))
